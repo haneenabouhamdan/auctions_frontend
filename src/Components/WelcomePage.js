@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../Components/Navbar'
+// import Map from '../Components/Maps'
 import Slideshow from '../Components/Slideshow'
+// import InitMap from '../Components/Maps';
 class welcomePage extends React.Component{
     constructor(props){
         super(props);
@@ -11,7 +13,8 @@ class welcomePage extends React.Component{
         return (
             <div className="home">
                 <Navbar/>
-            <Slideshow/>
+                <Slideshow/>
+                {/* <Map/> */}
             </div>
         )
     }

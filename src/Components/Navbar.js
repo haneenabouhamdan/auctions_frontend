@@ -6,17 +6,25 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import axios from 'axios'
 
 
 class Navbar extends Component {
-state = {
-  isOpen: false
-};
+        state = {
+        isOpen: false
+        };
 
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
 }
-
+logout = e => {
+    e.preventDefault();
+    axios.get("/sanctum/csrf-cookie").then(response => {
+      axios.post("/logout").then(res => {
+        sessionStorage.removeItem('loggedIn');
+      });
+    });
+};
 render() {
   return (
     <Router>
@@ -51,7 +59,7 @@ render() {
           <MDBNavbarNav left>
           <MDBNavItem>
           <MDBNavLink className="waves-effect waves-light" to="#!">
-               <h3><MDBIcon fas icon="home" /> Subasta</h3>
+               <h3><MDBIcon fas icon="home" />Subasta</h3>
               </MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
@@ -62,8 +70,8 @@ render() {
                   <MDBIcon icon="user" />
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default"  right>
-                  <MDBNavLink className="waves-effect waves-light" to="/login">
-                    <h6><MDBIcon fas icon="sign-in-alt" />SignIn</h6>
+                  <MDBNavLink className="waves-effect waves-light" onClick={this.logout} to="/login">
+                    <h6><MDBIcon fas icon="sign-in-alt"/>SignIn</h6>
                     </MDBNavLink>
                   <MDBNavLink className="waves-effect waves-light" to="/logout">
                     <h6><MDBIcon fas icon="sign-out-alt" />SignOut</h6>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
+import Navbar from '../Components/Navbar'
 import 'react-slideshow-image/dist/styles.css'
 
 const Slideshow = () => {

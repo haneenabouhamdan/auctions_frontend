@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import {MDBIcon } from "mdbreact";
-// import Location from '../Components/Location';
+import Location from '../Components/Location';
 import '../style/loginform.css';
 
 class Login extends React.Component{

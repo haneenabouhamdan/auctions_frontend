@@ -34,7 +34,7 @@ class Location extends Component {
         <Dialog open={this.props.openD} onClose={this.handleClose}  aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Choose Location</DialogTitle>
         <DialogContent style={{width:500,height:400}}>
-        {/* <Maps/> */}
+        <Maps/>
         </DialogContent>
         <DialogActions style={{position:"fixed"}}>
           <Button onClick={this.handleClose} color="primary">
