@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../Components/Navbar'
+import Slideshow from '../Components/Slideshow'
 class welcomePage extends React.Component{
     constructor(props){
         super(props);
@@ -7,8 +9,9 @@ class welcomePage extends React.Component{
     }
     render(){
         return (
-            <div>
-
+            <div className="home">
+                <Navbar/>
+            <Slideshow/>
             </div>
         )
     }

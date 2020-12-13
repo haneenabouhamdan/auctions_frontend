@@ -1,6 +1,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import {MDBIcon } from "mdbreact";
 // import Location from '../Components/Location';
 import '../style/loginform.css';
 
@@ -234,37 +235,57 @@ class Login extends React.Component{
       <form action="#">
         <h1 style={{color:"#595959"}}>Sign Up</h1>
         <br />
-        <input type="text" onChange={this.handleChange} value={this.state.first_name} name ="first_name" placeholder="First Name"  />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="signature" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="text" onChange={this.handleChange} value={this.state.first_name} name ="first_name" placeholder="First Name"  /></div>
         <label className="message">{ this.state.firstNameErr }</label>
-        <input type="text" onChange={this.handleChange} value={this.state.last_name} name ="last_name"  placeholder="Last Name"/>
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="signature" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="text" onChange={this.handleChange} value={this.state.last_name} name ="last_name"  placeholder="Last Name"/></div>
         <label className="message">{ this.state.lastNameErr}</label>
-        <input type="email" onChange={this.handleChange} value={this.state.email} name="email" placeholder="Email" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="envelope" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="email" onChange={this.handleChange} value={this.state.email} name="email" placeholder="Email" /></div>
         <label className="message">{ this.state.emailErr}</label>
-        <input type="text" onChange={this.handleChange} value={this.state.phone} name="phone" placeholder="Phone" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="phone-alt" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="text" onChange={this.handleChange} value={this.state.phone} name="phone" placeholder="Phone" /></div>
         <label className="message">{ this.state.phoneErr}</label>
-        <input type="date" onChange={this.handleChange} value={this.state.date_of_birth} name="date_of_birth" placeholder="Date of birth" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="calendar-alt" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="date" onChange={this.handleChange} value={this.state.date_of_birth} name="date_of_birth" placeholder="Date of birth" /></div>
         <label className="message">{ this.state.date_of_birth_error}</label>
-        <input type="password" onChange={this.handleChange} value={this.state.password} name="password" placeholder="Password" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="lock" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="password" onChange={this.handleChange} value={this.state.password} name="password" placeholder="Password" /></div>
         <label className="message">{ this.state.passErr}</label>
-        <input type="password" onChange={this.handleChange} value={this.state.password_confirmation} name="password_confirmation" placeholder=" Confirm Password" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="lock" style={{padding: "10px",marginTop:"10px"}}/>
+        <input type="password" onChange={this.handleChange} value={this.state.password_confirmation} name="password_confirmation" placeholder=" Confirm Password" /></div>
          <label className="message">{ this.state.passErr}</label>
         {/* <a onClick={this.handleClickOpen}>
          Choose Location
         </a> */}
-        <button onClick={this.onSubmitt}>Sign Up</button>
-        <br />
+        <br/>
+        <button  className="buttonlogin" onClick={this.onSubmitt}>Sign Up</button>
+        
       </form>
     </div>
     <div className="form-container sign-in-container">
       <form action="#">
         <h1 style={{color:"#595959"}}>Sign in</h1>
         <br />
-        <input type="email" onChange={this.handleChange} name="email" placeholder="Email" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="envelope" style={{padding: "10px",marginTop:"10px"}}/>
+       <input type="email" onChange={this.handleChange} name="email" placeholder="Email" /></div>
         <label className="message">{ this.state.emailErr }</label>
-        <input onChange={this.handleChange} type="password" name="password" placeholder="Password" />
+        <div style={{display:"flex",width:"350px"}}>
+        <MDBIcon fas icon="lock" style={{padding: "10px",marginTop:"10px"}}/>
+        <input onChange={this.handleChange} type="password" name="password" placeholder="Password" /></div>
         <label className="message">{ this.state.passErr }</label>
-        <br />
-        <button onClick={this.onSubmit}>Sign In</button>
+        
+        <br/>
+        <button className="buttonlogin" onClick={this.onSubmit}>Sign In</button>
       </form>
     </div>
     <div className="overlay-container">
@@ -272,7 +293,7 @@ class Login extends React.Component{
         <div className="overlay-panel overlay-left">
           <h1>Welcome Back!</h1>
           <p>To keep connected with us please login with your personal info</p>
-          <button className="ghost" id="signIn" onClick={()=>{
+          <button className="ghost buttonlogin" id="signIn" onClick={()=>{
           const container = document.getElementById('container');
           container.classList.remove("right-panel-active");
         }}>Sign In</button>
@@ -280,7 +301,7 @@ class Login extends React.Component{
         <div className="overlay-panel overlay-right">
           <h1>Hello, Friend!</h1>
           <p>Enter your personal details and start journey with us</p>
-          <button className="ghost" id="signUp" onClick={()=>{
+          <button className="ghost buttonlogin" id="signUp" onClick={()=>{
           const container = document.getElementById('container');
           container.classList.add("right-panel-active");
         }}>Sign Up</button>
