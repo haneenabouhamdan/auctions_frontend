@@ -1,0 +1,74 @@
+  .card-user{
+    margin-top: 30px;
+    margin-right:20px;
+    text-align: left;
+    height: auto;
+    padding: .4375rem .75rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    font-weight: 300;
+    border-radius: .35rem;
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+  }
+  .editProfile button{
+    color: #fff;
+      border-color: #007bff;
+      background-color: #007bff;
+      box-shadow: none;
+      font-weight: 400;
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+      border: 1px solid transparent;
+      padding: .5625rem 1rem;
+      font-size: .75rem;
+      line-height: 1.125;
+      border-radius: .25rem;
+  }
+  .editProfile Input{
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    font: 400 14.3333px Arial;
+  }
+  .editProfile label{
+    text-align: -webkit-match-parent;
+    font-weight: 300;
+    display: inline-block;
+    margin-bottom: .5rem;
+    color:gray;
+    font-size:1rem;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  }
+.smallCard{
+  margin-top: 30px;
+    text-align: center;
+    height: auto;
+    padding: .4375rem .75rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    font-weight: 300;
+    border-radius: .35rem;
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+  
+}
+.image{
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+  border-radius: 50%!important;
+}

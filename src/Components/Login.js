@@ -2,9 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import {MDBIcon } from "mdbreact";
-import Location from '../Components/Location';
 import '../style/loginform.css';
-
 class Login extends React.Component{
   constructor(props){
     super(props);
@@ -234,7 +232,6 @@ class Login extends React.Component{
     <div className="form-container sign-up-container">
       <form action="#">
         <h1 style={{color:"#595959"}}>Sign Up</h1>
-        <br />
         <div style={{display:"flex",width:"350px"}}>
         <MDBIcon fas icon="signature" style={{padding: "10px",marginTop:"10px"}}/>
         <input type="text" onChange={this.handleChange} value={this.state.first_name} name ="first_name" placeholder="First Name"  /></div>

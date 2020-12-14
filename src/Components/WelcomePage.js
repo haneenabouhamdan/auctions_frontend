@@ -12,7 +12,7 @@ class welcomePage extends React.Component{
     render(){
         return (
             <div className="home">
-                <Navbar/>
+               
                 <Slideshow/>
                 {/* <Map/> */}
             </div>
