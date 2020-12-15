@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import '../style/User.css';
-import UserSidebar from '../Components/UserSidebar'
+import '../style/Sidebar.css'
+import UserSidebar from './UserSidebar'
 // reactstrap components
 import {
   Button,
@@ -16,6 +17,8 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import ListCountries from "./ListCountries";
+import { MDBIcon } from "mdbreact";
 
 class UserProfile extends React.Component {
     constructor(props){
@@ -66,13 +69,13 @@ class UserProfile extends React.Component {
     render(){
         return(
             <div className="editProfile">
-                {/* <UserSidebar/> */}
-             
+              
             <Row className="row"> 
+            <UserSidebar/>
             <Col >
             <Card className="smallCard">
                 <CardHeader style={{backgroundColor:"white",height:"300px"}}>
-                <img className="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnFD4_IWysU0yIVldplKK9OPrHFMF1V9tHnw&usqp=CAU" />
+                <img className="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WP5MRWdHRVEcIj8WvCOtGVYnl6yyTEIoMg&usqp=CAU" />
                 <br/>
                 <Row>
                     <Col>
@@ -82,9 +85,9 @@ class UserProfile extends React.Component {
                 <CardBody>
                 
                     <Row>
-                        <Col>My bids</Col>
-                        <Col>Winning bids</Col>
-                        <Col>My fav</Col>
+                        <Col><MDBIcon icon="gavel" style={{color:"#804000"}}/> My Bids</Col>
+                        <Col><MDBIcon icon="trophy" style={{color:"#ffbb33"}}/> Won Bids</Col>
+                        <Col><MDBIcon icon="heart" style={{color:"#cc3300"}}/> Favorites</Col>
                     </Row>
                 </CardBody>
                 </Card>    
@@ -167,13 +170,19 @@ class UserProfile extends React.Component {
                             onChange={this.handlechangeall} type="date" />
                         </FormGroup>
                         </Col>
-                        
                         </Row>
+                        <Row>
+                      <Col className="px-1">
+                      <label>Address</label>
+                      <ListCountries/>
+                      <br/>
+                      </Col>
+                    </Row>
                         <Row>
                         <Col className="px-1" md="5">
                         <FormGroup>
                           <label htmlFor="exampleInputEmail1">
-                            Password
+                           Old Password
                           </label>
                           <Input placeholder="Password" defaultValue={this.state.password}
                             name="password"
@@ -191,6 +200,7 @@ class UserProfile extends React.Component {
                         </FormGroup>
                         </Col>
                     </Row>
+                   
                     <Row>
                         <Col>
                       <div className="update ml-auto mr-auto">

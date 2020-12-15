@@ -2,7 +2,7 @@ import './App.css';
 import Login from './Components/Login';
 import PaymentDetails from './Components/PaymentDetails';
 import welcomePage from './Components/WelcomePage';
-import Navbar from './Components/Navbar'
+// import Navbar from './Components/Navbar'
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +11,7 @@ import UserProfile from './Components/UserProfile';
 function App() {
   return (
     <div className="App">
-       <Navbar/>
+       {/* <Navbar/> */}
        <Router>   
         <Route exact path="/" component={welcomePage} />
         <Route exact path="/login" component={Login} /> 

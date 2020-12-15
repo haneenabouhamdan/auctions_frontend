@@ -111,7 +111,7 @@ class PaymentDetails extends React.Component{
     }
     render(){
         return( 
-            <div className="credit">
+        <div className="credit">
         <form action="#">
         <h2 style={{color:"#595959"}}>Please enter your Credit details</h2>
         <input type="text" onChange={this.handleChange} value={this.state.credit_card} name="credit_card" placeholder="Credit Card number"></input>

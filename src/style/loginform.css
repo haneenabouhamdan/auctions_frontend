@@ -46,8 +46,8 @@ a {
 
 .buttonlogin {
 	border-radius: 20px;
-	border: 1px solid #3366ff;
-	background-color: #3366ff;
+	border: 1px solid  #12a58c;
+	background-color: #12a58c;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -185,8 +185,8 @@ input[type="date"]:before {
 
 .overlay {
 	background: #1ad6f7;
-	background: -webkit-linear-gradient(to right, #668cff, #3366ff);
-	background: linear-gradient(to right, #3366ff, #668cff);
+	background: -webkit-linear-gradient(to right, #32b69b, #04bb9c);
+	background: linear-gradient(to right, #32b69b, #04bb9c);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
