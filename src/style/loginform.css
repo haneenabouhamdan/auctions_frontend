@@ -266,11 +266,13 @@ footer p {
     margin: 10px 0;
 }
 
-footer i {
-    color: red;
-}
 
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+.nabar{
+	background: -webkit-linear-gradient(to right, #04bb9c, #04bb9c);
+	background: linear-gradient(to right, #32b69b, #04bb9c);
+	height:70px;
 }

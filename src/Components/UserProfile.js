@@ -1,5 +1,9 @@
 import React from "react";
 import axios from "axios";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import '../style/User.css';
 import '../style/Sidebar.css'
 import UserSidebar from './UserSidebar'
@@ -25,12 +29,14 @@ class UserProfile extends React.Component {
         super(props);
         this.state={
           first_name:"",
+          image:"",
           last_name:"",
           phone:"",
           password:"",
           balance:"",
           date_of_birth:"",
           email:"",
+          openD:false,
           password_confirmation:""
         }
     }
@@ -45,11 +51,39 @@ class UserProfile extends React.Component {
                phone:response.data.phone,
                balance:response.data.balance,
                date_of_birth:response.data.date_of_birth,
+               image:response.data.image
              })
           })
     }
     handlechangeall = (event) =>{
         this.setState ( { [event.target.name] :event.target.value  } )
+    }
+    ChangePic =()=>{
+      //dialog containing input file
+      this.setState({
+        openD:true
+      })
+
+    }
+  
+    addImage=(file)=>
+    {
+      this.setState({ 
+        image: file[0],
+      })
+    }
+    handleClose = () => {
+        this.setState({openD: false});
+      };
+    onSubmit=(evt)=>{
+      evt.preventDefault();
+      const fd = new FormData();
+      fd.append('image', this.state.image);
+      axios.defaults.withCredentials=true;
+          axios.post('/api/editImage',fd).then(res=>{
+            // alert.name="res.message"
+          })
+          this.handleClose();
     }
     editProfile=()=>{
         let formData1={
@@ -69,16 +103,29 @@ class UserProfile extends React.Component {
     render(){
         return(
             <div className="editProfile">
-              
             <Row className="row"> 
             <UserSidebar/>
             <Col >
             <Card className="smallCard">
                 <CardHeader style={{backgroundColor:"white",height:"300px"}}>
-                <img className="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WP5MRWdHRVEcIj8WvCOtGVYnl6yyTEIoMg&usqp=CAU" />
-                <br/>
+                <img className="image" src={this.state.image} />
+              
+                <Dialog open={this.state.openD} onClose={this.handleClose}  aria-labelledby="form-dialog-title">
+                <DialogContent style={{width:"300px",height:"200px"}}>
+                <input onChange={(e) => this.addImage(e.target.files) } type="file" id="image" ref="productimage" />
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={this.handleClose} className="dialogAct">
+                    Cancel
+                  </Button>
+                  <Button onClick={this.onSubmit} className="dialogAct">
+                    Submit
+                  </Button>
+                </DialogActions>
+              </Dialog>
                 <Row>
                     <Col>
+                    <a onClick={this.ChangePic}><label style={{fontSize:"10px"}}>Change Profile Picture</label></a>
                 <h2><label>{this.state.first_name} {this.state.last_name}</label></h2></Col>
                 </Row>
                 </CardHeader>
@@ -88,6 +135,11 @@ class UserProfile extends React.Component {
                         <Col><MDBIcon icon="gavel" style={{color:"#804000"}}/> My Bids</Col>
                         <Col><MDBIcon icon="trophy" style={{color:"#ffbb33"}}/> Won Bids</Col>
                         <Col><MDBIcon icon="heart" style={{color:"#cc3300"}}/> Favorites</Col>
+                    </Row>
+                    <Row>
+                        <Col>0</Col>
+                        <Col>0</Col>
+                        <Col>0</Col>
                     </Row>
                 </CardBody>
                 </Card>    
@@ -184,7 +236,7 @@ class UserProfile extends React.Component {
                           <label htmlFor="exampleInputEmail1">
                            Old Password
                           </label>
-                          <Input placeholder="Password" defaultValue={this.state.password}
+                          <Input placeholder="*********" defaultValue={this.state.password}
                             name="password"
                             onChange={this.handlechangeall} type="password" />
                         </FormGroup>

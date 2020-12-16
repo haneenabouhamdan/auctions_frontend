@@ -1,10 +1,9 @@
 import React from 'react';
-import { Fade } from 'react-slideshow-image';
-import Navbar from '../Components/Navbar'
-import 'react-slideshow-image/dist/styles.css'
-
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+import '../style/Search.css'
 const Slideshow = () => {
-  const fadeImages = [
+  const slideImages = [
     "https://modern-villas.com/wp-content/uploads/2018/08/Luxury-Villa-with-Seaviews-in-Javea-3.jpg",
     "https://www.slrlounge.com/wp-content/uploads/2014/07/973A2703-41.jpg",
     "https://88designbox.com/upload/2018/02/07/modern-house-in-la-canada.jpg",
@@ -15,31 +14,32 @@ const Slideshow = () => {
   return (
     <div>
       <div>
-        <Fade duration="1800" style={{marginBottom:"10px"}}>
-          <div className="each-fade">
-            <div>
-              <img src={fadeImages[0]} style={{width:"100%",height:"550px"}} />
+        <Slide duration="2000" style={{marginBottom:"10px",padding:"20px",width:"100%"}}> 
+          <div className="each-slide">
+            <div style={{width:"100%",height:"500px",'backgroundImage': `url(${slideImages[0]})`,backgroundSize:"100% 500px"}}>
+            {/* <input type="text" placeholder="country"/> */}
+            <span></span>
+              {/* <img src={fadeImages[0]} style={{width:"100%",height:"500px"}} /> */}
             </div>
           </div>
-          <div className="each-fade">
-            
-            <div>
-              <img src={fadeImages[1]} style={{width:"100%",height:"550px"}}/>
+          <div className="each-slide">
+            <div style={{width:"100%",height:"500px",'backgroundImage': `url(${slideImages[1]})`,backgroundSize:"100% 500px"}}>
+            <input type="text" placeholder="country"/>
             </div>
           </div>
-          <div className="each-fade">
-            <div>
-              <img src={fadeImages[2]} style={{width:"100%",height:"550px"}}/>
-            </div>
-           
-          </div>
-          <div className="each-fade">
-            <div>
-              <img src={fadeImages[3]} style={{width:"100%",height:"550px"}}/>
+          <div className="each-slide">
+          
+            <div style={{width:"100%",height:"500px",'backgroundImage': `url(${slideImages[2]})`,backgroundSize:"100% 500px"}}>
+            <input type="text" placeholder="country"/>
             </div>
            
           </div>
-        </Fade>
+          <div className="each-slide">
+          <div style={{width:"100%",height:"500px",'backgroundImage': `url(${slideImages[3]})`,backgroundSize:"100% 500px"}}>
+          <input type="text" placeholder="country"/>
+            </div>
+          </div>
+        </Slide>
       </div>
     </div>
   );

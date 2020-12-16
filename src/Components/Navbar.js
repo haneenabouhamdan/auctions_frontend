@@ -56,12 +56,12 @@ login = e =>{
 render() {
   return (
     <Router>
-      <MDBNavbar expand="md"  style={{height:"70px"}}>
+      <MDBNavbar expand="md"  className="nabar">
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
-            <MDBNavItem active>
-              <MDBNavLink to="#!" className="Navv">Home</MDBNavLink>
+            <MDBNavItem active style={{marginTop:"20px"}}>
+              <a href="/userprofile" style={{color:"white"}} >Profile</a>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="#!" className="Navv">Features</MDBNavLink>
@@ -69,53 +69,30 @@ render() {
             <MDBNavItem>
               <MDBNavLink to="#!" className="Navv">Features</MDBNavLink>
             </MDBNavItem>
-
             <MDBNavItem>
-              
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <div className="Navv d-none d-md-inline">Houses</div>
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-default">
-                  {this.state.categories.map((item)=>
-                  <MDBDropdownItem href="#!" className="Navv">{item.name}</MDBDropdownItem>
-                  )}
-                </MDBDropdownMenu>
-              </MDBDropdown>
-            </MDBNavItem>
-            <MDBNavItem>
-               <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <div className="Navv d-none d-md-inline">Lands</div>
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-default">
-                  {this.state.landsCat.map((item)=>
-                  <MDBDropdownItem href="#!" className="Navv">{item.name}</MDBDropdownItem>
-                  )}
-                </MDBDropdownMenu>
-              </MDBDropdown>
+              <MDBNavLink to="#!" className="Navv">Features</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav left>
           <MDBNavItem>
           <MDBNavLink className="waves-effect waves-light" to="#!">
-               <h3 className="Navv"><MDBIcon fas icon="home" className="Navv" />Subasta</h3>
+               <h3 className="Navv"><MDBIcon fas icon="home" className="Navv" /> D.P.M</h3>
               </MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
               <MDBDropdown >
-                <MDBDropdownToggle nav caret>
+                <MDBDropdownToggle nav caret className="Navv">
                   <MDBIcon icon="user" className="Navv"/>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default"  right>
-                  <MDBNavLink className="waves-effect waves-light"  to="/login">
-                    <h6 className="Navv"><MDBIcon fas icon="sign-in-alt" className="Navv"/>SignIn</h6>
-                    </MDBNavLink>
-                  <MDBNavLink className="waves-effect waves-light" to="/login">
-                    <h6 className="Navv"><MDBIcon fas icon="sign-out-alt" className="Navv" /><a className="Navv">SignOut</a></h6>
-                    </MDBNavLink>
+                  <a href="/login" className="Navvi">
+                    <button  className="b">SignIn</button>
+                    </a>
+                  <a href="/login"  className="Navvi">
+                    <button onClick={this.logout} className="b">SignOut</button>
+                    </a>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>

@@ -37,5 +37,15 @@
   }
 }
 .Navv{
-  color:#9da7a2!important;
+  color:white!important;
+}
+.Navvi{
+  color:grey!important;
+  /* text-align:center;s */
+}
+.b{
+  background-color: white;
+  color:grey!important;
+  text-align:center;
+  border: 0;
 }

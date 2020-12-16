@@ -8,7 +8,8 @@ render(){
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
           <a href="#">
-          <MDBIcon fas icon="home" /> Start Bootstrap
+            <h4>
+          <MDBIcon fas icon="home" /> Mazad</h4>
           <hr style={{color:'white',backgroundColor:'white'}}/>
           </a>
         </li>
@@ -25,7 +26,7 @@ render(){
           <a href="#">My Alerts</a>
         </li>
         <li>
-          <a href="#"><MDBIcon fas icon="arrow-left" /></a>
+          <a href="/welcomePage"><MDBIcon fas icon="arrow-left" /></a>
         </li>
       </ul>
     </div>
