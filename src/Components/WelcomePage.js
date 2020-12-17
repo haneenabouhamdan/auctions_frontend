@@ -6,6 +6,7 @@ import Slideshow from '../Components/Slideshow'
 import welcome from '../images/welcome.jpeg'
 import { MDBIcon } from 'mdbreact';
 import MainCategories from './MainCategories';
+import Maps from './Maps';
 // import InitMap from '../Components/Maps';
 class welcomePage extends React.Component{
     constructor(props){
@@ -27,7 +28,7 @@ class welcomePage extends React.Component{
                    
                {/* <Slideshow/> */}
                {/* <Categories/> */}
-                {/* <Map/> */}
+                <Maps/>
             </div>
         )
     }
